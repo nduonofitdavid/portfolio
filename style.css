@@ -1,0 +1,150 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  font-family: "JetBrains Mono", Consolas, "Liberation Mono", monospace;
+  font-size: 17px;
+  line-height: 1.7;
+  font-synthesis: none;
+  color: #171717;
+  background: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  width: min(100% - 48px, 560px);
+  margin: clamp(56px, 11vh, 112px) auto 64px;
+  overflow-wrap: anywhere;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+h1 {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  width: fit-content;
+  margin-bottom: 24px;
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+.cursor {
+  display: inline-block;
+  width: 9px;
+  height: 20px;
+  background: currentColor;
+}
+
+.intro p + p {
+  margin-top: 18px;
+}
+
+section {
+  margin-top: 40px;
+}
+
+h2 {
+  margin-bottom: 16px;
+}
+
+.experience-list,
+.project-list,
+.contact ul {
+  list-style: none;
+}
+
+.experience-list li + li,
+.project-list li + li {
+  margin-top: 20px;
+}
+
+.experience-dates {
+  font-size: 0.875em;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+
+.link-arrow {
+  display: inline-block;
+  font-size: 0.8em;
+}
+
+.contact {
+  margin-top: 36px;
+}
+
+.contact ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 26px;
+}
+
+.contact a {
+  display: inline-block;
+  padding-block: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  padding: 6px 10px;
+  background: #fff;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .page {
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+}
