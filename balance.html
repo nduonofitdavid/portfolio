@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A personal corner of the internet. A little about me, a few projects, and ways to get in touch.">
+    <meta name="color-scheme" content="light">
+    <title>david nduonofit</title>
+    <link rel="preload" href="fonts/JetBrainsMono-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">skip to content</a>
+
+    <main id="main" class="page">
+      <header class="intro">
+        <h1>balance scale<span class="cursor" aria-hidden="true"></span></h1>
+        <p>
+          balance scale is a multimodal deep learning framework for skin lesion classification for skin lesion classification.
+        </p>
+      </header>
+
+      <section class="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">dataset</h2>
+        <p>the dataset used for training this model is the MILK10k dataset, more information on it <a href="https://challenge.isic-archive.com/landing/milk10k/">here</a></p>
+      </section>
+
+      <section class="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">architecture</h2>
+        <p>balance scale makes use of two image modalities; a dermoscopic image, and a clinical close-up image, alongside patient data such as age, sex, skin colour, amongside the MONET annotation of the images, for each image modality.</p><br>
+        <p>the two image modalities are processed independently using a efficientnet cnn, and the metadata modalities are processed using a mlp</p><br>
+        <p>the streams are then fused using a gmu, the dermoscopic fused with its respective metadata, and the clinical-stream fused also. The fused streams are then combined using a gmu also.</p><br>
+        <p>each stream head is supervised using an 11 class classification, similar to inception net, with each branch contributing towards the loss, but the third stream that fuses the fused clinical and dermoscopic branch is used for classification.</p>
+      </section>
+
+      <section class="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">results</h2>
+        <p>the model achieves an accuracy of 93% but a low macro f1 of 4.83, this is due to the imbalanced nature of the dataset, and the evaluation criteria being 0.5 for all classes.</p><br>
+        <p>to improve performance, per-class thresholding could be used during training and evaluation, as the model may find it difficult to predict a probability >= 0.5 for minority classes.</p>
+      </section>
+      
+      <section class="projects" aria-labelledby="projects-heading">
+        <h2>you can find the repository containing the experiments at <a href="https://github.com/nduonofitdavid/balance-scale">balance scale</a></h2>
+      </section>
+      <footer class="contact" aria-label="Contact and social links">
+        <!-- Replace all three placeholder destinations with your own. -->
+        <ul>
+          <li><a href="mailto:nduonofitdavidfortune@gmail.com">email</a></li>
+          <li><a href="www.linkedin.com/in/davidfortune-nduonofit-4b1a98355">linkedin</a></li>
+          <li><a href="https://github.com/nduonofitdavid">github</a></li>
+        </ul>
+      </footer>
+    </main>
+  </body>
+</html>
